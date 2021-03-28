@@ -8,6 +8,8 @@
 
 import UIKit
 import Foundation
+import Alamofire
+import AlamofireImage
 
 // MARK: - Welcome
 struct Welcome: Codable {
@@ -94,6 +96,8 @@ class ViewController: UIViewController {
             do {
                 let infoFilmes = try JSONDecoder().decode(Welcome.self, from: data)
                 print("INFOS: \(infoFilmes)")
+                //self.tituloFilme.text = infoFilmes
+                //self.imagemPoster.image = imagemDoAluno
             } catch let error {
                 print("ERROO: \(error)")
             }

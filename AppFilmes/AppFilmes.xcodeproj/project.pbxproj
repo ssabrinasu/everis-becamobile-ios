@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		07281F943E242316C070445E /* Pods_AppFilmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93C948CD1E8BB80F55FF96C /* Pods_AppFilmes.framework */; };
 		164955022AD8B3FAF381AB4C /* Pods_AppFilmes_AppFilmesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64808C45EC4FC4444A528C71 /* Pods_AppFilmes_AppFilmesUITests.framework */; };
 		38397B5E3FFB32F5CE87BE34 /* Pods_AppFilmesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D265252883EF947701C817F /* Pods_AppFilmesTests.framework */; };
+		9332CAE92611029100C129B2 /* HomeFilmesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332CAE82611029100C129B2 /* HomeFilmesCollectionViewCell.swift */; };
 		93B68953261047DE00296C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B68952261047DE00296C6B /* AppDelegate.swift */; };
 		93B68955261047DE00296C6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B68954261047DE00296C6B /* ViewController.swift */; };
 		93B68958261047DE00296C6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B68956261047DE00296C6B /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		4D265252883EF947701C817F /* Pods_AppFilmesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppFilmesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64808C45EC4FC4444A528C71 /* Pods_AppFilmes_AppFilmesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppFilmes_AppFilmesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4251B3CB5131782410AE80 /* Pods-AppFilmesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFilmesTests.release.xcconfig"; path = "Target Support Files/Pods-AppFilmesTests/Pods-AppFilmesTests.release.xcconfig"; sourceTree = "<group>"; };
+		9332CAE82611029100C129B2 /* HomeFilmesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFilmesCollectionViewCell.swift; sourceTree = "<group>"; };
 		93B6894F261047DE00296C6B /* AppFilmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFilmes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B68952261047DE00296C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B68954261047DE00296C6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,8 +103,14 @@
 				AD27855EAE060ED4B89D8C90 /* Pods-AppFilmesTests.debug.xcconfig */,
 				8D4251B3CB5131782410AE80 /* Pods-AppFilmesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9332CAEA261102C500C129B2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		93B68946261047DE00296C6B = {
@@ -131,10 +139,12 @@
 			isa = PBXGroup;
 			children = (
 				93B68952261047DE00296C6B /* AppDelegate.swift */,
+				9332CAEA261102C500C129B2 /* Home */,
 				93B68954261047DE00296C6B /* ViewController.swift */,
+				9332CAE82611029100C129B2 /* HomeFilmesCollectionViewCell.swift */,
 				93B68956261047DE00296C6B /* Main.storyboard */,
-				93B6895C261047E200296C6B /* Assets.xcassets */,
 				93B6895E261047E200296C6B /* LaunchScreen.storyboard */,
+				93B6895C261047E200296C6B /* Assets.xcassets */,
 				93B68961261047E200296C6B /* Info.plist */,
 				93B68959261047DE00296C6B /* AppFilmes.xcdatamodeld */,
 			);
@@ -409,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B68955261047DE00296C6B /* ViewController.swift in Sources */,
+				9332CAE92611029100C129B2 /* HomeFilmesCollectionViewCell.swift in Sources */,
 				93B6895B261047DE00296C6B /* AppFilmes.xcdatamodeld in Sources */,
 				93B68953261047DE00296C6B /* AppDelegate.swift in Sources */,
 			);
