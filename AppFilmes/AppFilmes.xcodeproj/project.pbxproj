@@ -106,11 +106,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		9332CAEA261102C500C129B2 /* Home */ = {
+		9332CAEB26111BB000C129B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Home;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9332CAEC26111BB900C129B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9332CAED26111BC200C129B2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		93B68946261047DE00296C6B = {
@@ -138,8 +152,10 @@
 		93B68951261047DE00296C6B /* AppFilmes */ = {
 			isa = PBXGroup;
 			children = (
+				9332CAED26111BC200C129B2 /* Controller */,
+				9332CAEC26111BB900C129B2 /* View */,
+				9332CAEB26111BB000C129B2 /* Model */,
 				93B68952261047DE00296C6B /* AppDelegate.swift */,
-				9332CAEA261102C500C129B2 /* Home */,
 				93B68954261047DE00296C6B /* ViewController.swift */,
 				9332CAE82611029100C129B2 /* HomeFilmesCollectionViewCell.swift */,
 				93B68956261047DE00296C6B /* Main.storyboard */,

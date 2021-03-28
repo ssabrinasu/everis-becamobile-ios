@@ -11,8 +11,8 @@ import Foundation
 import Alamofire
 import AlamofireImage
 
-// MARK: - Welcome
-struct Welcome: Codable {
+// MARK: - Filmes
+struct Filmes: Decodable {
     let page: Int
     let results: [Result]
     let totalPages, totalResults: Int
@@ -83,30 +83,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         makeRequest()
+        
     }
     
-    private func makeRequest() {
-        
-        guard let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=62ba84de75827479b761f04766259232&language=pt-BR") else { return }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            
-            guard let data = data else { return }
-            
-            do {
-                let infoFilmes = try JSONDecoder().decode(Welcome.self, from: data)
-                print("INFOS: \(infoFilmes)")
-                //self.tituloFilme.text = infoFilmes
-                //self.imagemPoster.image = imagemDoAluno
-            } catch let error {
-                print("ERROO: \(error)")
+    func makeRequest() {
+        Alamofire.request("https://api.themoviedb.org/3/trending/all/week?api_key=62ba84de75827479b761f04766259232&language=pt-BR", method: .get).responseJSON{ (resposta) in
+            switch resposta.result {
+            case .success:
+                print(resposta.result.value!)
+                break
+            case .failure:
+                print(resposta.error!)
+                break
             }
-            
         }
-        task.resume()
-        
+    
     }
-    
-    
+
 }
 
