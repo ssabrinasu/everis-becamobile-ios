@@ -12,6 +12,9 @@ import AlamofireImage
 class HomeFilmesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imagemPoster: UIImageView!
+    @IBOutlet weak var tituloDoFilme: UILabel!
+    @IBOutlet weak var popularidadeDoFilme: UILabel!
+    
 //
 //    func setup(_ filme:Filme) {
 //        guard let imagemUrl = URL(string: filme.backdropPath) else { return }
