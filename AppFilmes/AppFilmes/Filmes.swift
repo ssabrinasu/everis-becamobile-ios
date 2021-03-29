@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 // MARK: - Filmes
 struct Filmes: Codable {
     let page: Int
@@ -23,52 +22,65 @@ struct Filmes: Codable {
 
 // MARK: - Result
 struct Result: Codable {
-    let adult: Bool?
-    let backdropPath: String
-    let genreIDS: [Int]
-    let id: Int
-    let originalLanguage: OriginalLanguage
-    let originalTitle: String?
-    let overview, posterPath: String
-    let releaseDate, title: String?
-    let video: Bool?
+    let video: Bool
     let voteAverage: Double
+    let overview, releaseDate, title: String
+    let adult: Bool
+    let backdropPath: String
+    let id: Int
+    let genreIDS: [Int]
     let voteCount: Int
+    let originalLanguage: OriginalLanguage
+    let originalTitle, posterPath: String
     let popularity: Double
     let mediaType: MediaType
-    let originCountry: [String]?
-    let firstAirDate, name, originalName: String?
     
     enum CodingKeys: String, CodingKey {
-        case adult
+        case video
+        case voteAverage = "vote_average"
+        case overview
+        case releaseDate = "release_date"
+        case title, adult
         case backdropPath = "backdrop_path"
-        case genreIDS = "genre_ids"
         case id
+        case genreIDS = "genre_ids"
+        case voteCount = "vote_count"
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
-        case overview
         case posterPath = "poster_path"
-        case releaseDate = "release_date"
-        case title, video
-        case voteAverage = "vote_average"
-        case voteCount = "vote_count"
         case popularity
         case mediaType = "media_type"
-        case originCountry = "origin_country"
-        case firstAirDate = "first_air_date"
-        case name
-        case originalName = "original_name"
     }
-    
 }
+
 enum MediaType: String, Codable {
     case movie = "movie"
-    case tv = "tv"
 }
+
 
 enum OriginalLanguage: String, Codable {
     case en = "en"
-    case es = "es"
-    case ja = "ja"
+    case ru = "ru"
+}
+
+struct FilmesViewModel {
+    let title: String
+    let voteAverage: Double
+    let overview: String
+    let id: Int
+    let backdropPath: String
+    let popularity:  Double
+}
+
+extension FilmesViewModel {
+    init(results: Result) {
+        self.title = results.title
+        self.voteAverage = results.voteAverage
+        self.overview = results.overview
+        self.id = results.id
+        self.backdropPath = results.backdropPath
+        self.popularity = results.popularity
+    }
+    
 }
 
