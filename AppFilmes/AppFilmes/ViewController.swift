@@ -21,6 +21,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     //let filmeAtual:Array<Filme> = resposta.result.value!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         colecaoDeFilmes.dataSource = self
@@ -28,24 +29,23 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     }
     
     func makeRequest() {
-        Alamofire.request("https://api.themoviedb.org/3/trending/movie/week?api_key=62ba84de75827479b761f04766259232&language=pt-BR", method: .get).responseJSON { (response) in
-            switch response.result {
-            case .success:
+        guard let path = Bundle.main.path(forResource: "movie", ofType: "json") else { return }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        var result: Result?
+        do {
+            let jsonData = try Data(contentsOf: url)
+            result = try JSONDecoder().decode(Result.self, from: jsonData)
+            if let result = result {
+                print(result)
                 
-                if let resposta = response.result.value as? Dictionary<String, Any>
-                {
-                    guard let listaDeFilmes = resposta["results"] as? Array<Dictionary<String, Any>>
-                        else { return }
-                    print(listaDeFilmes)
-                    
-                }
-                break
-            case .failure:
-                print(response.error!)
-                break
             }
+        } catch {
+            print("ERRO: \(error)")
         }
     }
+    
     
     //MARK: collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
