@@ -15,15 +15,17 @@ import AlamofireImage
 //MARK: Class
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
-    //MARK: Variaveis
+//MARK: Variaveis
     
     let urlString = "https://api.themoviedb.org/3/trending/movie/week?api_key=62ba84de75827479b761f04766259232&language=pt-BR"
     
     var results: [Result] = []
     
-    //MARK: IBOutlet
+//MARK: IBOutlet
     
     @IBOutlet weak var colecaoDeFilmes: UICollectionView!
+    
+//MARK: Funcoes
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,13 +57,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         task.resume()
        
     }
-        
-        
     
+//MARK: collection View
     
-    //MARK: collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return result.results.count ?? 0
         return results.count
        
     }
@@ -78,5 +77,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         celulaFilme.notaDoFilme.text =  "\(filmeAtual.voteAverage ?? 0)"
         
         return celulaFilme
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "detalhesId") as! DetalhesViewController
+        self.present(controller, animated: true, completion: nil)
     }
   }
