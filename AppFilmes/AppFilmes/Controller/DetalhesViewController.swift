@@ -7,13 +7,13 @@
 //
 import UIKit
 import Foundation
-import CoreData
 import Alamofire
 import AlamofireImage
 
 
 class DetalhesViewController: UIViewController {
     
+    //MARK: OUTLETS
 
     @IBOutlet weak var imagemDetalhes: UIImageView!
     @IBOutlet weak var tituloDetalhes: UILabel!
@@ -28,56 +28,30 @@ class DetalhesViewController: UIViewController {
     //MARK: VARIAVEIS
     let urlDetails = "https://api.themoviedb.org/3/movie/454626?api_key=62ba84de75827479b761f04766259232&language=pt-BR"
     
-    var imagemD: String = ""
-    var tituloD: String = ""
-    var dataD: String = ""
-    var notaD: String = ""
-    var sinopseD: String = ""
+    var filmeSelecionado: [Result] = []
     
-    var resultadoDetalhes = [Detalhes]()
+    
+    var titulo:String? = nil
+    var data:String? = nil
+    var nota:Double? = nil
+    var imagem:String? = nil
+    var sinopse:String? = nil
     
     //MARK: FUNCOES
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeRequestDetails()
-   
+        print(titulo)
         
-        print(resultadoDetalhes)
-
-    }
-    
-    
-    func makeRequestDetails() {
-        guard let url = URL(string: urlDetails) else {return}
+        tituloDetalhes.text = titulo
+        dataDeLancamento.text = "Lançado: \(data ?? "a")"
+        notaDetalhe.text = "\(nota ?? 0)"
+        sinopseDetalhes.text = sinopse
         
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let data = data, error == nil else {return}
-            
-            do {
-                let resultJson = try JSONDecoder().decode(Detalhes.self, from: data)
-                self?.resultadoDetalhes = [resultJson]
-//               DispatchQueue.main.async {
-//                    self?.imagemD = resultJson.backdropPath
-//                    self?.tituloD = resultJson.title
-//                    self?.dataD = resultJson.releaseDate
-//                   //self?.notaD = resultJson.voteAverage
-//                    self?.sinopseD = resultJson.overview
-//
-//                }
-                
-            }
-            catch {
-                print(error)
-                
-            }
+        if let url = URL(string: "https://image.tmdb.org/t/p/w500\(imagem ?? "a" )") {
+            imagemDetalhes.af_setImage(withURL: url)
         }
-        task.resume()
         
     }
-    
-    
-    //MARK: TableView
     
 }
-

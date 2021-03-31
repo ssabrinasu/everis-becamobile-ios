@@ -12,20 +12,22 @@ import CoreData
 import Alamofire
 import AlamofireImage
 
-//MARK: Class
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
-//MARK: Variaveis
+//MARK: VARIAVEIS
     
     let urlString = "https://api.themoviedb.org/3/trending/movie/week?api_key=62ba84de75827479b761f04766259232&language=pt-BR"
     
     var results: [Result] = []
     
-//MARK: IBOutlet
+    
+
+    
+//MARK: OUTLET
     
     @IBOutlet weak var colecaoDeFilmes: UICollectionView!
     
-//MARK: Funcoes
+//MARK: FUNCOES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +59,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         task.resume()
        
     }
-    
-//MARK: collection View
+        
+//MARK: COLLECTION VIEW
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return results.count
@@ -81,8 +83,27 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let filmeSelec = results[indexPath.item]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhesId") as! DetalhesViewController
-        self.present(controller, animated: true, completion: nil)
+        controller.filmeSelecionado = [filmeSelec]
+       
+        
+        let titulo = filmeSelec.title
+        let sinopse = filmeSelec.overview
+        let data = filmeSelec.releaseDate
+        let nota = filmeSelec.voteAverage
+        let imagem = filmeSelec.backdropPath
+        
+        controller.titulo = titulo
+        controller.data = data
+        controller.sinopse = sinopse
+        controller.imagem = imagem
+        controller.nota = nota
+        
+        
+         self.present(controller, animated: true, completion: nil)
     }
+    
+    
   }
