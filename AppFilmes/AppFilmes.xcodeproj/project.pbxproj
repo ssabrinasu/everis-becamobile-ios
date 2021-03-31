@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4327D53F14F8A39ECB92C289 /* Pods_AppFilmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27ECB13923D0D4B72977DCDD /* Pods_AppFilmes.framework */; };
+		9302D3782613C76000F7D2B8 /* FilmesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9302D3772613C76000F7D2B8 /* FilmesDAO.swift */; };
 		93B6746526127C13009CB5C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B6746426127C13009CB5C3 /* AppDelegate.swift */; };
 		93B6746726127C13009CB5C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B6746626127C13009CB5C3 /* ViewController.swift */; };
 		93B6746A26127C13009CB5C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B6746826127C13009CB5C3 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		0CBB3838FE7B55BE988F7E28 /* Pods-AppFilmes-AppFilmesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFilmes-AppFilmesUITests.release.xcconfig"; path = "Target Support Files/Pods-AppFilmes-AppFilmesUITests/Pods-AppFilmes-AppFilmesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		27ECB13923D0D4B72977DCDD /* Pods_AppFilmes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppFilmes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C7BAC35F2779CC473DC287 /* Pods_AppFilmesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppFilmesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9302D3772613C76000F7D2B8 /* FilmesDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesDAO.swift; sourceTree = "<group>"; };
 		93B6746126127C13009CB5C3 /* AppFilmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFilmes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B6746426127C13009CB5C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B6746626127C13009CB5C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				93B6746626127C13009CB5C3 /* ViewController.swift */,
 				93B674972612C393009CB5C3 /* HomeFilmesCollectionViewCell.swift */,
 				93B674992612E2A7009CB5C3 /* Filmes.swift */,
+				9302D3772613C76000F7D2B8 /* FilmesDAO.swift */,
 				93B6746826127C13009CB5C3 /* Main.storyboard */,
 				93B6749B2612E81E009CB5C3 /* movie.json */,
 				93B6746E26127C16009CB5C3 /* Assets.xcassets */,
@@ -419,6 +422,7 @@
 			files = (
 				93B6746726127C13009CB5C3 /* ViewController.swift in Sources */,
 				93B674982612C393009CB5C3 /* HomeFilmesCollectionViewCell.swift in Sources */,
+				9302D3782613C76000F7D2B8 /* FilmesDAO.swift in Sources */,
 				93B6746D26127C13009CB5C3 /* AppFilmes.xcdatamodeld in Sources */,
 				93B6746526127C13009CB5C3 /* AppDelegate.swift in Sources */,
 				93B6749A2612E2A7009CB5C3 /* Filmes.swift in Sources */,

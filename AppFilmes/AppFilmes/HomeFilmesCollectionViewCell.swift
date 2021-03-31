@@ -12,6 +12,5 @@ class HomeFilmesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imagemPoster: UIImageView!
     @IBOutlet weak var tituloDoFilme: UILabel!
-    @IBOutlet weak var popularidadeDoFilme: UILabel!
-    
+    @IBOutlet weak var notaDoFilme: UILabel!
 }

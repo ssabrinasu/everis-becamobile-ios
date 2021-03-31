@@ -68,40 +68,32 @@
                                                                         <constraint firstAttribute="height" constant="170" id="MBB-8I-xOb"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="8.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dR2-PH-Yjv">
-                                                                    <rect key="frame" x="76" y="165" width="40" height="42"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="35" id="bKC-7g-bZl"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Titulo do filme" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L76-oY-KwN">
+                                                                    <rect key="frame" x="6" y="185" width="110" height="15"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="9"/>
+                                                                    <color key="textColor" red="0.015686274510000001" green="0.4039215686" blue="0.4399479731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dR2-PH-Yjv">
+                                                                    <rect key="frame" x="80" y="149" width="36" height="33"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="23"/>
                                                                     <color key="textColor" red="0.015686274510000001" green="0.4039215686" blue="0.4399479731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <color key="highlightedColor" red="0.065315855059999997" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="shadowColor" red="0.065315855059999997" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <size key="shadowOffset" width="1" height="0.0"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Titulo do filme" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L76-oY-KwN">
-                                                                    <rect key="frame" x="6" y="166" width="62" height="41"/>
-                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="9"/>
-                                                                    <color key="textColor" red="0.015686274510000001" green="0.4039215686" blue="0.4399479731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </view>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="Vfu-nV-58g" secondAttribute="trailing" id="5P8-AZ-aPr"/>
                                                             <constraint firstItem="Vfu-nV-58g" firstAttribute="top" secondItem="N4e-Xt-6Xc" secondAttribute="top" id="92v-3K-2yP"/>
-                                                            <constraint firstAttribute="bottomMargin" secondItem="dR2-PH-Yjv" secondAttribute="bottom" constant="7" id="9Nv-eW-McS"/>
-                                                            <constraint firstItem="L76-oY-KwN" firstAttribute="firstBaseline" secondItem="dR2-PH-Yjv" secondAttribute="firstBaseline" id="O0K-sF-zBw"/>
-                                                            <constraint firstAttribute="trailingMargin" secondItem="L76-oY-KwN" secondAttribute="trailing" constant="11" id="Ygz-0g-wZz"/>
-                                                            <constraint firstItem="dR2-PH-Yjv" firstAttribute="leading" secondItem="N4e-Xt-6Xc" secondAttribute="leadingMargin" constant="60" id="aAC-Sn-SGB"/>
-                                                            <constraint firstAttribute="bottom" secondItem="L76-oY-KwN" secondAttribute="bottom" id="etX-1C-bUa"/>
-                                                            <constraint firstItem="L76-oY-KwN" firstAttribute="leading" secondItem="N4e-Xt-6Xc" secondAttribute="leadingMargin" constant="-10" id="fUN-Rw-Q9g"/>
                                                             <constraint firstItem="Vfu-nV-58g" firstAttribute="leading" secondItem="N4e-Xt-6Xc" secondAttribute="leading" id="kW0-eU-k53"/>
-                                                            <constraint firstItem="dR2-PH-Yjv" firstAttribute="trailing" secondItem="Vfu-nV-58g" secondAttribute="trailing" id="pDB-A3-zhj"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="imagemPoster" destination="Vfu-nV-58g" id="D1D-2g-1Hk"/>
-                                                            <outlet property="popularidadeDoFilme" destination="dR2-PH-Yjv" id="X0M-TH-h66"/>
+                                                            <outlet property="notaDoFilme" destination="dR2-PH-Yjv" id="WgL-l1-8fe"/>
                                                             <outlet property="tituloDoFilme" destination="L76-oY-KwN" id="AvX-w9-IQL"/>
                                                         </connections>
                                                     </collectionViewCell>

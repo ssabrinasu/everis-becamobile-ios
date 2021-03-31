@@ -33,7 +33,6 @@ struct Result: Codable {
     let video: Bool
     let voteAverage: Double
     let id: Int
-    let popularity: Double
     let mediaType: MediaType
     
     enum CodingKeys: String, CodingKey {
@@ -48,7 +47,7 @@ struct Result: Codable {
         case posterPath = "poster_path"
         case title, video
         case voteAverage = "vote_average"
-        case id, popularity
+        case id
         case mediaType = "media_type"
     }
 }
