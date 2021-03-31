@@ -13,7 +13,7 @@ import Alamofire
 import AlamofireImage
 
 //MARK: Class
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
     //MARK: Variaveis
     
