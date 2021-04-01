@@ -12,15 +12,13 @@ import CoreData
 import Alamofire
 import AlamofireImage
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
 //MARK: VARIAVEIS
     
     let urlString = "https://api.themoviedb.org/3/trending/movie/week?api_key=62ba84de75827479b761f04766259232&language=pt-BR"
     
     var results: [Result] = []
-    
-    
 
     
 //MARK: OUTLET
@@ -72,23 +70,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         let filmeAtual = results[indexPath.item]
         
-        if let url = URL(string: "https://image.tmdb.org/t/p/w500\(filmeAtual.posterPath ?? "a" )") {
+        if let url = URL(string: "https://image.tmdb.org/t/p/w500\(filmeAtual.posterPath )") {
            celulaFilme.imagemPoster.af_setImage(withURL: url)
         }
         celulaFilme.tituloDoFilme.text = filmeAtual.title
-        celulaFilme.notaDoFilme.text =  "\(filmeAtual.voteAverage ?? 0)"
+        celulaFilme.notaDoFilme.text =  "\(filmeAtual.voteAverage )"
         
         return celulaFilme
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let filmeSelec = results[indexPath.item]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "detalhesId") as! DetalhesViewController
         controller.filmeSelecionado = [filmeSelec]
        
-        
         let titulo = filmeSelec.title
         let sinopse = filmeSelec.overview
         let data = filmeSelec.releaseDate
@@ -101,9 +98,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         controller.imagem = imagem
         controller.nota = nota
         
+        self.present(controller, animated: true, completion: nil)
         
-         self.present(controller, animated: true, completion: nil)
     }
-    
-    
   }

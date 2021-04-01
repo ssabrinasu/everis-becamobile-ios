@@ -41,7 +41,6 @@ class DetalhesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(titulo)
         
         tituloDetalhes.text = titulo
         dataDeLancamento.text = "Lançado: \(data ?? "a")"
