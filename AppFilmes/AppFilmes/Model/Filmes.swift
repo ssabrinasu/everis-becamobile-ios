@@ -13,7 +13,7 @@ struct Filmes: Codable {
     let page: Int
     let results: [Result]
     let totalPages, totalResults: Int
-    
+
     enum CodingKeys: String, CodingKey {
         case page, results
         case totalPages = "total_pages"
@@ -23,31 +23,33 @@ struct Filmes: Codable {
 
 // MARK: - Result
 struct Result: Codable {
-    let overview, releaseDate: String
     let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]
-    let voteCount: Int
+    let id: Int
     let originalLanguage: OriginalLanguage
-    let originalTitle, posterPath, title: String
+    let originalTitle, overview, posterPath, releaseDate: String
+    let title: String
     let video: Bool
     let voteAverage: Double
-    let id: Int
+    let voteCount: Int
+    let popularity: Double
     let mediaType: MediaType
-    
+
     enum CodingKeys: String, CodingKey {
-        case overview
-        case releaseDate = "release_date"
         case adult
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
-        case voteCount = "vote_count"
+        case id
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
+        case overview
         case posterPath = "poster_path"
+        case releaseDate = "release_date"
         case title, video
         case voteAverage = "vote_average"
-        case id
+        case voteCount = "vote_count"
+        case popularity
         case mediaType = "media_type"
     }
 }
@@ -58,6 +60,5 @@ enum MediaType: String, Codable {
 
 enum OriginalLanguage: String, Codable {
     case en = "en"
-    case ru = "ru"
+    case ja = "ja"
 }
-
