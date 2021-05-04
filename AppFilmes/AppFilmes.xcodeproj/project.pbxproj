@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		917EF47E0C67E7C58063C751 /* Pods_AppFilmes_AppFilmesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932422F62639DA6B00F8AD13 /* Pods_AppFilmes_AppFilmesUITests.framework */; };
 		932422A52639A37E00F8AD13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B6746826127C13009CB5C3 /* Main.storyboard */; };
 		932422A82639A37E00F8AD13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B6746826127C13009CB5C3 /* Main.storyboard */; };
 		935789CE26365DEE00A06BBB /* Pods_AppFilmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27ECB13923D0D4B72977DCDD /* Pods_AppFilmes.framework */; };
@@ -101,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3EB9C96FF791BC778CC5B1D /* Pods_AppFilmes_AppFilmesUITests.framework in Frameworks */,
+				917EF47E0C67E7C58063C751 /* Pods_AppFilmes_AppFilmesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,9 +189,9 @@
 			children = (
 				93B6746426127C13009CB5C3 /* AppDelegate.swift */,
 				93F91543263848C50017AF09 /* Server */,
-				9357F2FD2614E31F0005E30A /* View */,
 				9357F2FC2614E30C0005E30A /* Controller */,
 				9357F2FB2614E2FE0005E30A /* Model */,
+				9357F2FD2614E31F0005E30A /* View */,
 				93B6746E26127C16009CB5C3 /* Assets.xcassets */,
 				93B6747326127C16009CB5C3 /* Info.plist */,
 				93B6746B26127C13009CB5C3 /* AppFilmes.xcdatamodeld */,
@@ -253,6 +255,7 @@
 				93B6747426127C16009CB5C3 /* Sources */,
 				93B6747526127C16009CB5C3 /* Frameworks */,
 				93B6747626127C16009CB5C3 /* Resources */,
+				25D720FBA45ACE89BDF9704B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -357,6 +360,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		25D720FBA45ACE89BDF9704B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppFilmesTests/Pods-AppFilmesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppFilmesTests/Pods-AppFilmesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppFilmesTests/Pods-AppFilmesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4F4E9425D89C4B10281CF94D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -651,7 +671,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AppFilmes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -670,7 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AppFilmes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

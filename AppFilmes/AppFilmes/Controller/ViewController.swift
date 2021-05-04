@@ -13,20 +13,53 @@ import Alamofire
 import AlamofireImage
 
 class ViewController: UIViewController {
-
+    
     //MARK: LIFE CYCLE
+    
+    @IBOutlet weak var searchController: UISearchBar!
     
     @IBOutlet weak var colecaoDeFilmes: UICollectionView!
     
-    var results = FilmesAPI().makeRequest()
+    var results: [Result] = []
     
+    let requisicao = FilmesAPI().makeRequest()
+    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        colecaoDeFilmes.delegate = self
+        results = requisicao
+        
         colecaoDeFilmes.dataSource = self
-        print(results[0].title)
+        colecaoDeFilmes.delegate = self
+        
+        searchController.delegate = self
+        
+        
+        let textFieldInsideSearchBar = searchController.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = .white
     }
-    
+}
+
+//MARK: SEARCH BAR
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var resultFilter: [Result] = []
+        
+        if searchText == "" {
+            results = requisicao
+        } else {
+            for items in results {
+                if items.title.lowercased().contains(searchText.lowercased()){
+                    resultFilter.append(items)
+                    results = resultFilter
+                    print(items.title)
+                    }
+                }
+        }
+        print(searchText)
+        colecaoDeFilmes.reloadData()
+    }
 }
 
 //MARK: COLLECTION VIEW
@@ -42,15 +75,14 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeFilmesCollectionViewCell
         let filmeAtual = results[indexPath.item]
         
+        
+        
         if let url = URL(string: "https://image.tmdb.org/t/p/w500\(filmeAtual.posterPath )") {
             celulaFilme.imagemPoster.af_setImage(withURL: url)
         }
         celulaFilme.tituloDoFilme.text = filmeAtual.title
         celulaFilme.notaDoFilme.text =  "\(filmeAtual.voteAverage )"
-        
-        //descartar depois
-        let model = modelDetalhes(result: filmeAtual)
-        print(model.titulo)
+    
         
         return celulaFilme
     }

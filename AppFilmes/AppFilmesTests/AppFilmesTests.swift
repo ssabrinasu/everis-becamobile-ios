@@ -7,10 +7,12 @@
 //
 
 import XCTest
+
 @testable import AppFilmes
 
 class AppFilmesTests: XCTestCase {
-
+    var vcDetalhes: DetalhesViewController!
+    var api: FilmesAPI!
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -18,10 +20,16 @@ class AppFilmesTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testDetalhesViewController() {
+        vcDetalhes = DetalhesViewController()
+        vcDetalhes.viewDidLoad()
+        XCTWaiterDelegate
+    }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRequestNotNil() {
+        api = FilmesAPI()
+        XCTAssertNotNil(api.makeRequest(), "Not nil")
     }
 
     func testPerformanceExample() {
@@ -32,3 +40,4 @@ class AppFilmesTests: XCTestCase {
     }
 
 }
+
